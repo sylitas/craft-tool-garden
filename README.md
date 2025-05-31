@@ -1,73 +1,58 @@
-# Welcome to your Lovable project
+Craft Tool Garden 🛠️
+A collection of handcrafted utility tools designed to improve productivity, creativity, and everyday tasks.
 
-## Project info
+📖 About
+Craft Tool Garden is a web-based platform that provides access to various tools for different purposes. Whether you need design utilities, productivity apps, or information widgets, our garden of tools has you covered.
 
-**URL**: https://lovable.dev/projects/8220fd9a-4d7e-413a-a02f-6e0c35d73684
+🧰 Features
+The platform includes the following tools:
 
-## How can I edit this code?
-
-There are several ways of editing your application.
-
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/8220fd9a-4d7e-413a-a02f-6e0c35d73684) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
+Color Palette Generator 🎨 - Generate beautiful color palettes for your design projects
+Unit Converter ⚖️ - Convert between different units of measurement with ease
+QR Code Generator - Create QR codes for URLs, text, and contact information
+Markdown Editor 📄 - Write and preview Markdown with live rendering and export options
+Weather Dashboard 🌤️ - Check current weather and forecasts for any location
+Expense Tracker - Track your expenses and manage your budget effectively
+🚀 Technologies
 This project is built with:
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Vite - Next generation frontend tooling
+TypeScript - JavaScript with syntax for types
+React - A JavaScript library for building user interfaces
+shadcn-ui - Re-usable components built with Radix UI and Tailwind CSS
+Tailwind CSS - A utility-first CSS framework
+💻 Installation & Setup
+Prerequisites
+Node.js and npm installed - install with nvm
+Local Development
+🌐 Deployment
+Using Lovable
+The easiest way to deploy this project is through Lovable:
 
-## How can I deploy this project?
+Open the Lovable project page
+Click on Share -> Publish
+Custom Domain
+You can connect a custom domain to your Lovable project:
 
-Simply open [Lovable](https://lovable.dev/projects/8220fd9a-4d7e-413a-a02f-6e0c35d73684) and click on Share -> Publish.
+Navigate to Project > Settings > Domains
+Click Connect Domain
+Follow the instructions to set up your custom domain
+For more information, see the Custom Domain Setup Guide.
 
-## Can I connect a custom domain to my Lovable project?
+🤝 Contributing
+There are several ways to contribute to this project:
 
-Yes, you can!
+Using Lovable
+Visit the Lovable Project and start prompting. Changes made via Lovable will be committed automatically to the repository.
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+Using GitHub
+Edit files directly in GitHub
+Use GitHub Codespaces
+Clone the repository locally, make changes, and push them back
+📄 License
+[Add your license information here]
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+📞 Contact
+[Add contact information here]
+
+Built with ❤️ using Lovable

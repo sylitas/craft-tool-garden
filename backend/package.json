@@ -1,0 +1,20 @@
+{
+  "name": "craft-tool-garden-bff",
+  "version": "1.0.0",
+  "description": "BFF for Craft Tool Garden",
+  "main": "src/server.ts",
+  "scripts": {
+    "start": "bun run src/server.ts",
+    "dev": "bun --watch src/server.ts"
+  },
+  "dependencies": {
+    "@fastify/cors": "^8.3.0",
+    "fastify": "^4.24.0",
+    "kafkajs": "^2.2.4",
+    "pino-pretty": "^13.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.8.4",
+    "typescript": "^5.2.2"
+  }
+}

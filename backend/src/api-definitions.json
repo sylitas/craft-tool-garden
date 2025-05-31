@@ -1,0 +1,12 @@
+{
+  "produce-kafka-message": {
+    "basePath": "/api/produce-kafka-message",
+    "endpoints": [
+      {
+        "path": "/test-connection",
+        "method": "POST",
+        "handler": "testConnection"
+      }
+    ]
+  }
+}

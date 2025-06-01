@@ -6,6 +6,11 @@
         "path": "/test-connection",
         "method": "POST",
         "handler": "testConnection"
+      },
+      {
+        "path": "/produce-message",
+        "method": "POST",
+        "handler": "produceMessage"
       }
     ]
   }

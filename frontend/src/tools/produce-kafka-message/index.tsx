@@ -97,6 +97,27 @@ const ProduceKafkaMessage = ({ tool }: ProduceKafkaMessageProps) => {
     }
   };
 
+  const formatJson = () => {
+    try {
+      // Parse the current message and format it with 2 spaces
+      const parsedJson = JSON.parse(message);
+      const formattedJson = JSON.stringify(parsedJson, null, 2);
+      setMessage(formattedJson);
+
+      toast({
+        title: 'JSON Formatted',
+        description: 'JSON has been successfully formatted',
+        variant: 'default',
+      });
+    } catch (error) {
+      toast({
+        title: 'Invalid JSON',
+        description: 'Please provide a valid JSON string',
+        variant: 'destructive',
+      });
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -126,14 +147,32 @@ const ProduceKafkaMessage = ({ tool }: ProduceKafkaMessageProps) => {
 
     setIsLoading(true);
 
-    // Simulate sending message to Kafka
-    setTimeout(() => {
+    try {
+      await axios.post(
+        'http://localhost:4321/api/produce-kafka-message/produce-message',
+        {
+          brokers: kafkaServer,
+          securityProtocol,
+          ...(showAuthFields && { username, password }),
+          topic,
+          message,
+        }
+      );
       toast({
         title: 'Message Sent',
-        description: `Successfully sent message to topic ${topic}`,
+        description: 'Your message has been successfully sent to Kafka',
+        variant: 'default',
       });
+    } catch (error) {
+      toast({
+        title: 'Error',
+        description: error.response?.data?.message || 'Failed to send message',
+        variant: 'destructive',
+      });
+      return;
+    } finally {
       setIsLoading(false);
-    }, 1500);
+    }
   };
 
   // Show authentication fields only for SASL protocols
@@ -262,7 +301,19 @@ const ProduceKafkaMessage = ({ tool }: ProduceKafkaMessageProps) => {
           </div>
 
           <div className='space-y-2'>
-            <Label htmlFor='message'>Message Payload (JSON) *</Label>
+            <div className='flex justify-between items-center'>
+              <Label htmlFor='message'>Message Payload (JSON) *</Label>
+              <Button
+                type='button'
+                variant='outline'
+                size='sm'
+                onClick={formatJson}
+                disabled={!message.trim() || !isConnected}
+                className='text-xs'
+              >
+                Format JSON
+              </Button>
+            </div>
             <Textarea
               id='message'
               value={message}

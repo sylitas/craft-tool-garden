@@ -10,9 +10,7 @@ type MessageRequest = FastifyRequest<{
 }>;
 
 type TestConnectionRequest = FastifyRequest<{
-  Body: {
-    brokers: string;
-  };
+  Body: { brokers: string };
 }>;
 
 export async function testConnection(
@@ -64,4 +62,51 @@ export async function testConnection(
       error: errorMessage,
     });
   }
+}
+
+type ProduceMessageBody = FastifyRequest<{
+  Body: {
+    brokers: string;
+    securityProtocol?: string;
+    username?: string;
+    password?: string;
+    topic: string;
+    message: string;
+    key?: string;
+  };
+}>;
+
+export async function produceMessage(
+  req: ProduceMessageBody,
+  res: FastifyReply
+) {
+  const {
+    brokers: brokersStr,
+    securityProtocol,
+    username,
+    password,
+    topic,
+    message,
+  } = req.body;
+
+  const brokers = brokersStr.split(',').map((broker) => broker.trim());
+
+  const kafka = new Kafka({ brokers });
+
+  const producer = kafka.producer();
+
+  await producer.connect();
+
+  await producer.send({
+    topic,
+    messages: [{ value: message }],
+  });
+
+  await producer.disconnect();
+
+  return res.send({
+    success: true,
+    message: 'Message produced successfully',
+    topic,
+  });
 }
